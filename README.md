@@ -107,10 +107,10 @@ public Object demoAddSubmit(HttpServletRequest request, HttpServletResponse resp
 
 ```
 
-### 3. 如何使用我的项目
+### 3. 如何在我的项目使用
 这个demo使用的都是map进行返回数据封装，跳转页面都是String。如果需要适合自己的项目，需要对切面进行修改。
 
-AntiDuplicateCommitAspect.java 根据需要自己改吧，毕竟每个项目都有自己的规范，有些东西没法用一套代码适应所有。当然提供一个接口让用户自己实现似乎也可以，不过使用会麻烦一些。
+AntiDuplicateCommitAspect.java 根据需要自己改吧，毕竟每个项目都有自己的规范，有些东西没法用一套代码适应所有。当然提供一个接口让用户自己实现似乎也可以，不过使用起来会麻烦一些。再说了一个公司或者一个项目这些东西都没有统一起来，那只能说明管理者的失职，以及参与者的不专业。
 
 ```java
 package com.sly.plugin.antiduplicatecommit.aop;
