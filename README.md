@@ -5,6 +5,7 @@
 
 ## 使用方法
 ### 1. 引入jar包
+使用maven方式，你得发布到你的仓库或者其它能够使用maven引用到的方式。
 ```xml
 <dependency>
 	<groupId>com.sly</groupId>
