@@ -8,7 +8,7 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
  * @author sly
  * @time 2019年5月16日
  */
-@ConfigurationProperties(prefix = "antiDuplicateCommit")
+@ConfigurationProperties(prefix = "anti-duplicate-commit")
 public class AntiDuplicateCommitProperties {
 	/** token不存在提示语 */
 	private String message;
