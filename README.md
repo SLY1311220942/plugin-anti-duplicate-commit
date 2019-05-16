@@ -24,13 +24,15 @@ anti-duplicate-commit:
 > @EnableAntiDuplicateCommit
 
 ### 4. 在需要验证的方法上添加验证注解
-> @AntiDuplicateCommit(keys = { DemoToken.DEMO_ADD_TOKEN }, isCheckToken = false, isReturnToken = true)
+```java
+@AntiDuplicateCommit(keys = { DemoToken.DEMO_ADD_TOKEN }, isCheckToken = false, isReturnToken = true)
+```
 
-> keys：为token的key
+> keys：token的key,可以是多个。
 
-> isCheckToken：是否验证token
+> isCheckToken：是否验证token。
 
-> isReturnToken：是否向页面或返回对象中返回新的token
+> isReturnToken：是否向页面或返回对象中返回新的token。
 
 ## 注意事项
 ### 1. 返回对象
