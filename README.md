@@ -28,6 +28,31 @@ anti-duplicate-commit:
 @AntiDuplicateCommit(keys = { DemoToken.DEMO_ADD_TOKEN }, isCheckToken = false, isReturnToken = true)
 ```
 
+```java
+@RequestMapping("/toAdd")
+@AntiDuplicateCommit(keys = { DemoToken.DEMO_ADD_TOKEN }, isCheckToken = false, isReturnToken = true)
+public String toAdd(HttpServletRequest request, HttpServletResponse response) {
+	return "/pages/add.html";
+}
+
+@ResponseBody
+@RequestMapping("/demoAddSubmit")
+@AntiDuplicateCommit(keys = { DemoToken.DEMO_ADD_TOKEN }, isCheckToken = true, isReturnToken = false)
+public Object demoAddSubmit(HttpServletRequest request, HttpServletResponse response) {
+	Map<String, Object> result = new HashMap<>(16);
+	try {
+		System.out.println("我是新增业务方法,我执行了!");
+		result.put("status", 200);
+		result.put("message", "新增成功!");
+	} catch (Exception e) {
+		LOGGER.error(ExceptionUtils.getStackTrace(e));
+		result.put("status", 400);
+		result.put("message", "新增失败!");
+	}
+	return result;
+}
+```
+
 > keys：token的key,可以是多个。
 
 > isCheckToken：是否验证token。
