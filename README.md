@@ -226,3 +226,5 @@ public class AntiDuplicateCommitAspect {
 }
 ```
 
+## 使用demo
+https://github.com/SLY1311220942/demo-antiduplicatecommit
