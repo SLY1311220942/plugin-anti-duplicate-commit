@@ -63,8 +63,10 @@ public class AntiDuplicateCommitAspect {
 		String[] keys = antiDuplicateCommit.keys();
 		if (antiDuplicateCommit.isCheckToken()) {
 			for (String key : keys) {
-				String existToken = (String) request.getSession().getAttribute(key);
 				String token = request.getParameter(key);
+				String existToken = (String) request.getSession().getAttribute(key);
+				//移除旧token 避免被重复使用
+				request.getSession().removeAttribute(key);
 				if (StringUtils.isBlank(existToken) || !existToken.equals(token)) {
 					result.put("message", antiDuplicateCommitProperties.getMessage());
 					isCheckPassed = false;
