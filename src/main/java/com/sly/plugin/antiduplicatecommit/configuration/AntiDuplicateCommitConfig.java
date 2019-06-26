@@ -18,6 +18,7 @@ public class AntiDuplicateCommitConfig {
 	
 	@Bean
 	public AntiDuplicateCommitAspect getAntiDuplicateCommitAspect(AntiDuplicateCommitProperties properties) {
+		System.out.println("初始化反重复提交插件...");
 		AntiDuplicateCommitAspect antiDuplicateCommitAspect = new AntiDuplicateCommitAspect();
 		antiDuplicateCommitAspect.setAntiDuplicateCommitProperties(properties);
 		return antiDuplicateCommitAspect;
